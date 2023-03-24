@@ -6,7 +6,7 @@
 /*   By: gpanico <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 09:48:36 by gpanico           #+#    #+#             */
-/*   Updated: 2023/03/13 11:56:24 by gpanico          ###   ########.fr       */
+/*   Updated: 2023/03/24 09:59:50 by gpanico          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 int	ft_key_control(int keycode, void *param)
 {
 	t_all		*all;
-	static int	toggle_s;
-	static int	toggle_p;
 
 	all = (t_all *)param;
 	if (keycode == 53)

@@ -25,13 +25,13 @@ B_SRCS	= ${B_DIR}/bresenham_bonus.c ${B_DIR}/bresenham2_bonus.c \
 		  ${B_DIR}/utils_bonus.c ${B_DIR}/window_bonus.c ${B_DIR}/zoom_bonus.c
 B_OBJS	= ${B_SRCS:.c=.o}
 LIBS	= libft.a libftprintf.a
-FLAGS	= -Wall -Werror -Wextra
+FLAGS	= -Wall -Werror -Wextra -O3
 GCC		= gcc ${FLAGS}
 RM		= rm -f
 MLXF	= -lmlx -framework OpenGL -framework AppKit
 
-.o:.c
-	${GCC} -c $< ${MLXF} -o ${<:.c=.o}
+.c.o:
+	gcc ${FLAGS} -c $<  -o ${<:.c=.o}
 
 ${NAME}: ${OBJS} lib
 	${GCC} ${OBJS} ${LIBS} ${MLXF} -o ${NAME}
