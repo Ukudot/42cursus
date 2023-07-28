@@ -23,6 +23,8 @@
 
 // macro
 # define TRS 50
+# define WIDTH 1500
+# define HEIGHT 1500
 
 // structs
 typedef struct s_point
@@ -137,7 +139,7 @@ void			ft_line_r_bresenham(t_all *all, int p1[2], int p2[2],
 void			ft_commands_hook(t_all *all);
 int				ft_key_control(int keycode, void *param);
 void			ft_init_rotate_s(void (*ft_s[6])(t_mat *, float));
-void			ft_init_translate(void (*ft_t[14])(t_mat *, float));
+void			ft_init_translate(void (*ft_t[150])(t_mat *, float));
 int				ft_end(void *param);
 void			ft_mat_control(int keycode, t_all *all);
 void			ft_sphere_control(int keycode, t_all *all);

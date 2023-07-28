@@ -30,19 +30,19 @@ int	ft_end(void *param)
 
 void	ft_sphere_control(int keycode, t_all *all)
 {
-	if (keycode == 49)
+	if (keycode == 48) // 49 for mac
 		ft_draw_sphere(all);
-	else if (keycode == 35)
+	else if (keycode == 65361) // 35 for mac
 	{
 		ft_s_rotate_x(all->wnd, &(all->mat), M_PI / 18);
 		ft_draw_sphere(all);
 	}
-	else if (keycode == 31)
+	else if (keycode == 65362) // 31 for mac
 	{
 		ft_s_rotate_y(all->wnd, &(all->mat), M_PI / 18);
 		ft_draw_sphere(all);
 	}
-	else if (keycode == 34)
+	else if (keycode == 65363) // 34 for mac
 	{
 		ft_s_rotate_z(all->wnd, &(all->mat), M_PI / 18);
 		ft_draw_sphere(all);
@@ -52,18 +52,18 @@ void	ft_sphere_control(int keycode, t_all *all)
 void	ft_mat_control(int keycode, t_all *all)
 {
 	void	(*rotate_s[6])(t_mat *, float);
-	void	(*translate[14])(t_mat *, float);
+	void	(*translate[150])(t_mat *, float);
 
 	ft_init_rotate_s(rotate_s);
 	ft_init_translate(translate);
-	if (keycode == 49)
+	if (keycode == 48) // 49 for mac
 		ft_draw_mat_p(all);
-	if (keycode - 83 >= 0 && keycode - 83 <= 5)
+	if (keycode - '1' >= 0 && keycode - '1' <= 5) // 83 for mac
 	{
-		(*rotate_s[keycode - 83])(&(all->mat), M_PI / 18);
+		(*rotate_s[keycode - '1'])(&(all->mat), M_PI / 18);
 		ft_draw_mat_p(all);
 	}
-	else if ((keycode >= 0 && keycode <= 2) || keycode == 13)
+	else if (keycode == 'w' || keycode == 'a' || keycode == 's' || keycode == 'd') // 0, 1, 2, 13 for mac
 	{
 		(*translate[keycode])(&(all->mat), TRS);
 		ft_draw_mat_p(all);
@@ -72,14 +72,14 @@ void	ft_mat_control(int keycode, t_all *all)
 
 int	ft_toggle_p(int keycode, int toggle_p, t_all *all)
 {
-	if (keycode == 3)
+	if (keycode == '7') // 3 for mac
 	{
 		if (toggle_p)
 			toggle_p = 0;
 		else
 			toggle_p = 1;
 	}
-	else if (keycode == 4)
+	else if (keycode == '8') // 4 for mac
 	{
 		if (toggle_p)
 			toggle_p = 0;

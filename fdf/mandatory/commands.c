@@ -17,7 +17,7 @@ int	ft_key_control(int keycode, void *param)
 	t_all		*all;
 
 	all = (t_all *)param;
-	if (keycode == 53)
+	if (keycode == 65307) //53 for mac
 		ft_end((void *) all);
 	return (0);
 }

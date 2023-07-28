@@ -17,10 +17,10 @@ int	main(int argc, char *argv[])
 	t_all	all;
 	char	***map;
 
-	all.wnd.height = 1500;
-	all.img.height = 1500;
-	all.wnd.width = 1500;
-	all.img.width = 1500;
+	all.wnd.height = HEIGHT;
+	all.img.height = HEIGHT;
+	all.wnd.width = WIDTH;
+	all.img.width = WIDTH;
 	map = ft_check_input_error(argc, argv[1], &(all.mat));
 	ft_map_to_mat(map, &(all.mat), all.wnd);
 	ft_normalize(&(all.mat), all.wnd);

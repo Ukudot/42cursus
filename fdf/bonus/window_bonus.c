@@ -26,9 +26,6 @@ void	ft_init_window(t_all *all)
 
 void	ft_first_image(t_all *all)
 {
-	int	i;
-
-	i = 0;
 	ft_rotate_x(&(all->mat), (double) M_PI / 2);
 	ft_rotate_y(&(all->mat), (double) -M_PI / 4);
 	ft_rotate_x(&(all->mat), -atan(1 / sqrt(2)));
