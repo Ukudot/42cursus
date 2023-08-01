@@ -24,11 +24,11 @@ B_SRCS	= ${B_DIR}/bresenham_bonus.c ${B_DIR}/bresenham2_bonus.c \
 		  ${B_DIR}/translate_bonus.c \
 		  ${B_DIR}/utils_bonus.c ${B_DIR}/window_bonus.c ${B_DIR}/zoom_bonus.c
 B_OBJS	= ${B_SRCS:.c=.o}
-LIBS	= libft.a libftprintf.a
-FLAGS	= -Wall -Werror -Wextra
+LIBS	= libft.a libftprintf.a libmlx.a
+FLAGS	= -Wall -Werror -Wextra -O3
 GCC		= gcc ${FLAGS}
 RM		= rm -f
-MLXF	= -lmlx -lXext -lX11 -lm #-framework OpenGL -framework AppKit
+MLXF	= -Lmlx -lXext -lX11 -lm #-framework OpenGL -framework AppKit
 
 .c.o:
 	gcc ${FLAGS} -c $<  -o ${<:.c=.o}
@@ -43,14 +43,18 @@ lib:
 	cp ./libft/libft.a ./libft.a
 	make -C ./ft_printf
 	cp ./ft_printf/libftprintf.a ./libftprintf.a
+	make -C ./minilibx-linux
+	cp ./minilibx-linux/libmlx.a ./libmlx.a
 
 clean:
 	${RM} ${OBJS}
 	${RM} ${B_OBJS}
 	${RM} libft.a
 	${RM} libftprintf.a
+	${RM} libmlx.a
 	make clean -C ./libft
 	make clean -C ./ft_printf
+	make clean -C ./minilibx-linux
 
 fclean: clean
 	${RM} ${NAME}

@@ -6,13 +6,13 @@
 /*   By: gpanico <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 09:36:39 by gpanico           #+#    #+#             */
-/*   Updated: 2023/03/13 14:34:45 by gpanico          ###   ########.fr       */
+/*   Updated: 2023/08/01 13:51:01 by gpanico          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FDF_H
 # define FDF_H
-# include <mlx.h>
+# include "../minilibx-linux/mlx.h"
 # include <unistd.h>
 # include <stdlib.h>
 # include <fcntl.h>
