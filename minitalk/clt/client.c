@@ -57,10 +57,15 @@ int	main(int argc, char *argv[])
 		ft_printf("Error, correct usage: [pid] [message]\n");
 		exit(1);
 	}
+	pid = ft_atoi(argv[1]);
+	if (pid <= 0)
+	{
+		ft_printf("Error, pid must be greater than 0\n");
+		exit(1);
+	}
 	sa.sa_handler = ft_handler_usr;
 	sigemptyset(&sa.sa_mask);
 	sigaction(SIGUSR1, &sa, NULL);
-	pid = ft_atoi(argv[1]);
 	ft_encoder(argv[2], pid);
 	pause();
 	return (0);
