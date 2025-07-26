@@ -24,10 +24,10 @@ void	ft_init_rotate_s(void (*ft_s[6])(t_mat *, float))
 
 void	ft_init_translate(void (*ft_t[150])(t_mat *, float))
 {
-	ft_t['a'] = &ft_translate_l; // 0 for mac
-	ft_t['s'] = &ft_translate_d; // 1 for mac
-	ft_t['d'] = &ft_translate_r; // 2 for mac
-	ft_t['w'] = &ft_translate_u; // 13 for mac
+	ft_t[0] = &ft_translate_l; // 0 for mac | a for linux
+	ft_t[1] = &ft_translate_d; // 1 for mac | s for linux
+	ft_t[2] = &ft_translate_r; // 2 for mac | d for linux
+	ft_t[13] = &ft_translate_u; // 13 for mac | w for linux
 }
 
 int	ft_key_control(int keycode, void *param)
@@ -37,9 +37,9 @@ int	ft_key_control(int keycode, void *param)
 	static int	toggle_p;
 
 	all = (t_all *)param;
-	if (keycode >= '7' && keycode <= '9' && !(toggle_s % 2)) // 3, 4, 5 for mac
+	if (keycode >= 3 && keycode <= 4 && !(toggle_s % 2)) // 3, 4, 5 for mac | 7, 9, 2 for linux
 		toggle_p = ft_toggle_p(keycode, toggle_p, all);
-	if (keycode == 48 && !toggle_p) // 49 for mac
+	if (keycode == 49 && !toggle_p) // 49 for mac | 48 for linux
 		toggle_s += 1;
 	if (toggle_s % 2 && !toggle_p)
 		ft_sphere_control(keycode, all);
@@ -51,7 +51,7 @@ int	ft_key_control(int keycode, void *param)
 		ft_draw_p_front_p(all);
 	else if (!(toggle_s % 2) && toggle_p == 3)
 		ft_draw_p_side_p(all);
-	if (keycode == 65307) //53 for mac
+	if (keycode == 53) //53 for mac | 65307 for linux
 		ft_end((void *) all);
 	return (0);
 }
@@ -66,7 +66,7 @@ int	ft_mouse_control(int button, int x, int y, void *param)
 		ft_zoom(x, y, all, 1.1);
 		ft_draw_mat_p(all);
 	}
-	else if (button == 3) //2 for mac
+	else if (button == 2) //2 for mac | 3 for linux
 	{
 		ft_zoom(x, y, all, 0.9);
 		ft_draw_mat_p(all);

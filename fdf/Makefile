@@ -28,7 +28,7 @@ LIBS	= libft.a libftprintf.a libmlx.a
 FLAGS	= -Wall -Werror -Wextra -O3
 GCC		= gcc ${FLAGS}
 RM		= rm -f
-MLXF	= -Lmlx -lXext -lX11 -lm #-framework OpenGL -framework AppKit
+MLXF	=  -framework OpenGL -framework AppKit
 
 .c.o:
 	gcc ${FLAGS} -c $<  -o ${<:.c=.o}
